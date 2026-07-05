@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Local runtime output
+.recording_tmp/
+recordings/
+
+# Build artifacts
+build/
+
+*.spec.bak
+
+# IDE / OS
+.vs/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Bundled binaries should be provided by Releases or local setup
+screen_recorder/resources/ffmpeg.exe
+screen_recorder/resources/*.dll
+

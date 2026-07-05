@@ -1,0 +1,4 @@
+PyQt5==5.15.11
+mss==10.0.0
+sounddevice==0.5.1
+PyAudioWPatch==0.2.12.7

@@ -1,7 +1,7 @@
 # Screen Recorder
 
 一个 Windows 桌面录屏小工具，支持区域录制、麦克风、系统声音、音量调节和 MP4 输出。
-
+![img](./assets/home.png)
 ## 功能
 
 - 选择屏幕录制区域，并保留可拖动、可缩放的绿色选区框
@@ -12,13 +12,15 @@
 - 麦克风和系统声音可分别调节音量
 - 可设置录制帧率
 - 录制开始后隐藏主窗口，只显示悬浮录制条和停止按钮
+- ![img](./assets/small.png)
 - 可选择视频保存位置，文件名按时间自动生成
+
 
 ## 直接下载使用
 
 如果你只是想使用，不想配置 Python 环境：
 
-1. 打开 GitHub 仓库的 `Releases`
+1. 打开 GitHub 仓库的 `dist`
 2. 下载 `ScreenRecorder.zip`
 3. 解压后进入 `ScreenRecorder` 文件夹
 4. 双击 `ScreenRecorder.exe`

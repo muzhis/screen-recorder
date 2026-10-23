@@ -9,6 +9,7 @@ recordings/
 
 # Build artifacts
 build/
+dist/ScreenRecorder/
 
 *.spec.bak
 

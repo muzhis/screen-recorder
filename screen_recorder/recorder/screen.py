@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+import sys
 import time
+from contextlib import nullcontext
 from typing import Callable
 
 import mss
 
+from screen_recorder.recorder.cursor import WindowsCursorOverlay
 from screen_recorder.utils.config import AppConfig
 
 
@@ -25,10 +28,15 @@ class ScreenRecorder:
         frame_interval = 1.0 / self.config.fps
         next_frame_at = time.perf_counter()
 
-        with mss.mss() as sct:
+        with mss.mss(with_cursor=sys.platform != "win32") as sct, (
+            WindowsCursorOverlay(region) if sys.platform == "win32" else nullcontext()
+        ) as cursor:
             while not should_stop() and not self._stopped:
                 image = sct.grab(monitor)
-                self.frame_writer(image.bgra)
+                frame = image.bgra
+                if cursor is not None:
+                    frame = cursor.render(frame)
+                self.frame_writer(frame)
 
                 next_frame_at += frame_interval
                 sleep_for = next_frame_at - time.perf_counter()

@@ -5,7 +5,7 @@
 ## 功能
 
 - 选择屏幕录制区域，并保留可拖动、可缩放的绿色选区框
-- 录制屏幕画面，输出 MP4
+- 录制屏幕画面和鼠标指针，输出 MP4
 - 录制麦克风声音
 - 录制系统播放声音，使用 Windows WASAPI Loopback
 - 麦克风和系统声音可分别选择是否录入
@@ -106,6 +106,7 @@ screen_recorder/
     region_selector.py
   recorder/
     screen.py
+    cursor.py
     audio.py
     encoder.py
   utils/
